@@ -16,6 +16,7 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import android.text.format.DateFormat;
+import android.widget.Toast;
 
 public class SudokuView extends View {
     private Context myContext;
@@ -30,6 +31,7 @@ public class SudokuView extends View {
     Paint numberPain_init = new Paint();
     Paint numberPaint_choose = new Paint();
 
+    private int successFlag = 0;
     private Game game;
 
     public SudokuView(Context context, int gameType, String gameDifficulty) {
@@ -143,7 +145,6 @@ public class SudokuView extends View {
         }
         int selectedX = (int) (event.getX() / length) - 1;
         int selectedY = (int) (event.getY() / length) - 1;
-Log.d("BBBBBBBBBBBBBBBBBBBB", "X = " + selectedX + "Y = "+selectedY);
         //点击填数区域
         if (selectedX >= 0 && selectedX < game.gameNumbers && selectedY >= 0 && selectedY < game.gameNumbers) {
             int num_xy = game.getTile(selectedX, selectedY, 1);
@@ -162,9 +163,12 @@ Log.d("BBBBBBBBBBBBBBBBBBBB", "X = " + selectedX + "Y = "+selectedY);
             invalidate();
             game.calculateAllUsedTiles();
             int result = game.ifsuccess();
-            Log.d("AAAAAAAAAAAAAAAAA", "result = " + result);
             if (result == 1) {
                 System.out.println("success!");
+                successFlag = successFlag + result;
+            }
+            if (successFlag == 1){
+                Toast.makeText(myContext, "恭喜，您赢了！",Toast.LENGTH_SHORT).show();
             }
         }
         //点击待选数字以及del区域

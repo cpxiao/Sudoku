@@ -50,7 +50,7 @@ public class InitSudoku {
         return initSudoku;
     }
 
-    //删除数组中为0的数据
+    //删除数组中指定的数字num的数据
     private int[] rmNumberFromArray(int[] array, int num) {
         int count = 0;
         for (int i = 0; i < array.length; i++) {
@@ -193,14 +193,15 @@ public class InitSudoku {
     //根据难度保留游戏初始值
     private int[][] keepInitNumbersByGameDifficulty(String gameDifficulty) {
         initNumbers = getInitNumbersByGameDifficulty(gameDifficulty);
-        int tmp, count = 0, i, j;
+        int tmp, count = 0, i, j, id;
         int tmpArray[] = new int[gameNumbers * gameNumbers];
         for (i = 0; i < tmpArray.length; i++) {
             tmpArray[i] = i;
         }
         int delNumbers = gameNumbers * gameNumbers - initNumbers;
         while (count < delNumbers) {
-            tmp = tmpArray[random1.nextInt(tmpArray.length)];
+            id = (random1.nextInt(100) + count * count * delNumbers) % tmpArray.length;
+            tmp = tmpArray[id];
             i = tmp / gameNumbers;
             j = tmp % gameNumbers;
             initSudoku[i][j] = 0;
@@ -215,19 +216,18 @@ public class InitSudoku {
         Double tmp;
         switch (gameDifficulty) {
             case "专家级":
-                tmp = 0.4;
-                break;
-            case "高级":
                 tmp = 0.45;
                 break;
-            case "中级":
+            case "高级":
                 tmp = 0.5;
                 break;
+            case "中级":
+                tmp = 0.55;
+                break;
             default:
-                tmp = 0.95;
+                tmp = 0.6;
                 break;
         }
-        initNumbers = (int)(tmp * gameNumbers * gameNumbers) + random1.nextInt(gameType);
-        return initNumbers;
+        return (int)(tmp * gameNumbers * gameNumbers) + random1.nextInt(gameType);
     }
 }

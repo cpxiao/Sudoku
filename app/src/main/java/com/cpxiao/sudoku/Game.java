@@ -221,7 +221,7 @@ public class Game {
             }
         }
         //游戏成功，数据不能修改了
-//        sudoku_init = sudoku;
+        sudoku_init = sudoku;
         return 1;
     }
 }
