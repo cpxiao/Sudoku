@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="game_type">游戏类型</string>
+    <string name="game_difficulty">游戏难度</string>
+    <string name="app_name">Sudoku</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_game">GameActivity</string>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sudoku_background">#ffffa268</color>
+    <color name="sudoku_boldLine">#ff000000</color>
+    <color name="sudoku_line">#ff000000</color>
+    <color name="sudoku_number_init">#ff000000</color>
+    <color name="sudoku_number">#f0e7caf0</color>
+    <color name="sudoku_number_choose">#f0e7caf0</color>
+</resources>
