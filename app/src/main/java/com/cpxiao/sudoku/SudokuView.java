@@ -5,17 +5,21 @@ package com.cpxiao.sudoku;
  */
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import android.text.format.DateFormat;
 
 public class SudokuView extends View {
+    private Context myContext;
+    private Intent myIntent;
     private String tmpString;
     private int tmpNumXY;
     private float length;
@@ -30,6 +34,8 @@ public class SudokuView extends View {
 
     public SudokuView(Context context, int gameType, String gameDifficulty) {
         super(context);
+        myContext = context;
+        myIntent = new Intent();
         game = new Game(gameType, gameDifficulty);
     }
 
@@ -126,7 +132,7 @@ public class SudokuView extends View {
 //        canvas.drawText((String)sysTimeStr, length * (2.0f) + x, length * (game.gameNumbers + 3.0f) + y, numberPain_init);
 
         //绘制新游戏按钮
-
+        canvas.drawText("新游戏", length * (2.0f), length * (game.gameNumbers + 4.0f) + y, numberPain_init);
         super.onDraw(canvas);
     }
 
@@ -137,7 +143,7 @@ public class SudokuView extends View {
         }
         int selectedX = (int) (event.getX() / length) - 1;
         int selectedY = (int) (event.getY() / length) - 1;
-
+Log.d("BBBBBBBBBBBBBBBBBBBB", "X = " + selectedX + "Y = "+selectedY);
         //点击填数区域
         if (selectedX >= 0 && selectedX < game.gameNumbers && selectedY >= 0 && selectedY < game.gameNumbers) {
             int num_xy = game.getTile(selectedX, selectedY, 1);
@@ -156,6 +162,7 @@ public class SudokuView extends View {
             invalidate();
             game.calculateAllUsedTiles();
             int result = game.ifsuccess();
+            Log.d("AAAAAAAAAAAAAAAAA", "result = " + result);
             if (result == 1) {
                 System.out.println("success!");
             }
@@ -175,9 +182,10 @@ public class SudokuView extends View {
             }
             invalidate();
         }
-
+        //点击“新游戏”
         else if (selectedY == game.gameNumbers + 3){
-
+            myIntent.setClass(myContext, MainActivity.class);
+            myContext.startActivity(myIntent);
         }
         return true;
     }

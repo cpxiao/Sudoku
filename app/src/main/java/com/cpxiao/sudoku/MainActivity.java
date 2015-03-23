@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -33,7 +34,8 @@ public class MainActivity extends ActionBarActivity {
                 int radioButtonId = group.getCheckedRadioButtonId();
                 RadioButton rb = (RadioButton)MainActivity.this.findViewById(radioButtonId);
                 String aa = (String)rb.getText();
-                gameType = (int)sqrt(Integer.valueOf(aa).doubleValue());
+                String[] bb = aa.split("\\*");
+                gameType = (int)sqrt(Integer.valueOf(bb[0]).doubleValue());
             }
         });
         radioGroup2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {

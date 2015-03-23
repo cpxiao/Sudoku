@@ -215,16 +215,16 @@ public class InitSudoku {
         Double tmp;
         switch (gameDifficulty) {
             case "专家级":
-                tmp = 0.3;
-                break;
-            case "高级":
-                tmp = 0.35;
-                break;
-            case "中级":
                 tmp = 0.4;
                 break;
-            default:
+            case "高级":
                 tmp = 0.45;
+                break;
+            case "中级":
+                tmp = 0.5;
+                break;
+            default:
+                tmp = 0.95;
                 break;
         }
         initNumbers = (int)(tmp * gameNumbers * gameNumbers) + random1.nextInt(gameType);
