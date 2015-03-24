@@ -1,15 +1,16 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.activity;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import com.cpxiao.sudoku.ActivityCollector;
+import com.cpxiao.sudoku.R;
 
 import static java.lang.Math.sqrt;
 
@@ -25,6 +26,7 @@ public class MainActivity extends ActionBarActivity {
         //隐藏标题栏
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
+        ActivityCollector.addActivity(this);
         RadioGroup radioGroup1 = (RadioGroup) findViewById(R.id.radioGroup1);
         RadioGroup radioGroup2 = (RadioGroup) findViewById(R.id.radioGroup2);
 
@@ -50,10 +52,7 @@ public class MainActivity extends ActionBarActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
-                intent.putExtra("gameType_int", gameType);
-                intent.putExtra("gameDifficulty_String", gameDifficulty);
-                startActivity(intent);
+                GameActivity.actionStart(MainActivity.this, gameType, gameDifficulty);
             }
         });
     }
@@ -76,11 +75,18 @@ public class MainActivity extends ActionBarActivity {
     @Override
     protected void onPause() {
         super.onPause();
+
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ActivityCollector.removeActivity(this);
     }
 
     @Override

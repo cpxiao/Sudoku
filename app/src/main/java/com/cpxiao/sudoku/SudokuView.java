@@ -7,16 +7,16 @@ package com.cpxiao.sudoku;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
 import android.text.format.DateFormat;
 import android.widget.Toast;
+
+import com.cpxiao.sudoku.activity.MainActivity;
 
 public class SudokuView extends View {
     private Context myContext;
@@ -135,6 +135,9 @@ public class SudokuView extends View {
 
         //绘制新游戏按钮
         canvas.drawText("新游戏", length * (2.0f), length * (game.gameNumbers + 4.0f) + y, numberPain_init);
+
+        //绘制退出按钮
+        canvas.drawText("退出", length * (2.0f), length * (game.gameNumbers + 5.0f) + y, numberPain_init);
         super.onDraw(canvas);
     }
 
@@ -191,6 +194,11 @@ public class SudokuView extends View {
             myIntent.setClass(myContext, MainActivity.class);
             myContext.startActivity(myIntent);
         }
+        //点击“退出”
+        else if (selectedY == game.gameNumbers + 4){
+            ActivityCollector.finishAll();
+        }
+
         return true;
     }
 }

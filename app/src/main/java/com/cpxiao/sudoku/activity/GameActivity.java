@@ -1,18 +1,28 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
+
+import com.cpxiao.sudoku.ActivityCollector;
+import com.cpxiao.sudoku.R;
+import com.cpxiao.sudoku.SudokuView;
 
 
 public class GameActivity extends ActionBarActivity {
+    public static void actionStart(Context context, int gameType, String gameDifficulty){
+        Intent intent = new Intent(context, GameActivity.class);
+        intent.putExtra("gameType_int", gameType);
+        intent.putExtra("gameDifficulty_String", gameDifficulty);
+        context.startActivity(intent);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        ActivityCollector.addActivity(this);
         Intent intent = getIntent();
         int gameType = intent.getIntExtra("gameType_int", 3);
         String gameDifficulty = intent.getStringExtra("gameDifficulty_String");
