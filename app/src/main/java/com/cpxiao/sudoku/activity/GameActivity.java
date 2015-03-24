@@ -6,11 +6,9 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.cpxiao.sudoku.ActivityCollector;
 import com.cpxiao.sudoku.R;
 import com.cpxiao.sudoku.SudokuView;
-
 
 public class GameActivity extends ActionBarActivity {
     public static void actionStart(Context context, int gameType, String gameDifficulty){

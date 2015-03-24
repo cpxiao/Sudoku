@@ -12,10 +12,8 @@ import android.graphics.Paint.Align;
 import android.graphics.Paint.FontMetrics;
 import android.view.MotionEvent;
 import android.view.View;
-
 import android.text.format.DateFormat;
 import android.widget.Toast;
-
 import com.cpxiao.sudoku.activity.MainActivity;
 
 public class SudokuView extends View {
@@ -198,7 +196,6 @@ public class SudokuView extends View {
         else if (selectedY == game.gameNumbers + 4){
             ActivityCollector.finishAll();
         }
-
         return true;
     }
 }

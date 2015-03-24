@@ -38,8 +38,6 @@ public class Game {
         return sudoku;
     }
 
-
-
     //根据坐标(x,y)获取方格中数字
     public int getTile(int x, int y, int flag) {
         if (flag == 0) {
@@ -65,10 +63,6 @@ public class Game {
                 used[i][j] = calculateUsedTiles(i, j);
             }
         }
-    }
-
-    public int[] getUsedTilesByCoor(int x, int y) {
-        return used[x][y];
     }
 
     //删除为0的数据
