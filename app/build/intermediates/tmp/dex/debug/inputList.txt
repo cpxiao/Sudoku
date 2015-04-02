@@ -1,0 +1,5 @@
+C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\classes\debug
+C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-a653d697d4e24f92c0dd4aa803fcde6c4549b7c6.jar
+C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a6c6b8ef5e487796482c28d961058568fb401f53.jar
+C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\classes-6fdf33d1f4dd635216e052da99d921d3f3c0bbbc.jar
+C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\classes-af7b40fe32d565d824bdf52fa24f27c87df3eea1.jar

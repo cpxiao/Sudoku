@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\classes-6fdf33d1f4dd635216e052da99d921d3f3c0bbbc.jar" />
+    </item>
+    <item
+        jar="C:\Users\cpxiao\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\21.0.3\support-annotations-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
+        <dex dex="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\support-annotations-21.0.3-a653d697d4e24f92c0dd4aa803fcde6c4549b7c6.jar" />
+    </item>
+    <item
+        jar="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
+        <dex dex="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\classes-af7b40fe32d565d824bdf52fa24f27c87df3eea1.jar" />
+    </item>
+    <item
+        jar="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\exploded-aar\com.android.support\support-v4\21.0.3\libs\internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
+        <dex dex="C:\Users\cpxiao\AndroidStudioProjects\Sudoku\app\build\intermediates\pre-dexed\debug\internal_impl-21.0.3-a6c6b8ef5e487796482c28d961058568fb401f53.jar" />
+    </item>
+
+</items>
