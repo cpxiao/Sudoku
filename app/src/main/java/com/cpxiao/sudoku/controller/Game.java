@@ -1,13 +1,13 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.controller;
 
 /**
  * Created by cpxiao on 2015/1/26.
  */
 
 public class Game {
-    int gameType;
-    int gameNumbers;
-    String gameDifficulty;
+    public int gameType;
+    public int gameNumbers;
+    public String gameDifficulty;
 
     //存放初始值
     private int sudoku_init[][];

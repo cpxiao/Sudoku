@@ -1,12 +1,15 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.controller;
 
 /**
  * Created by cpxiao on 2015/1/26.
  */
 
+import com.cpxiao.sudoku.utility.LogUtil;
+
 import java.util.Random;
 
 public class InitSudoku {
+    private String tag = "InitSudoku";
     private int gameType;
     private int gameNumbers;
     private String gameDifficulty;
@@ -214,6 +217,7 @@ public class InitSudoku {
     //根据难度获取保留数字的个数
     private int getInitNumbersByGameDifficulty(String gameDifficulty) {
         Double tmp;
+        LogUtil.d(tag, gameDifficulty);
         switch (gameDifficulty) {
             case "专家级":
                 tmp = 0.45;
@@ -225,7 +229,7 @@ public class InitSudoku {
                 tmp = 0.55;
                 break;
             default:
-                tmp = 0.6;
+                tmp = 0.60;
                 break;
         }
         return (int)(tmp * gameNumbers * gameNumbers) + random1.nextInt(gameType);

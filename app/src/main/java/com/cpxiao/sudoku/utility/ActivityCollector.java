@@ -1,4 +1,4 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.utility;
 
 import android.app.Activity;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.cpxiao.sudoku;
+package com.cpxiao.sudoku.view;
 
 /**
  * Created by cpxiao on 2015/1/26.
@@ -14,9 +14,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.text.format.DateFormat;
 import android.widget.Toast;
+
+import com.cpxiao.sudoku.controller.Game;
+import com.cpxiao.sudoku.R;
 import com.cpxiao.sudoku.activity.MainActivity;
+import com.cpxiao.sudoku.utility.ActivityCollector;
+import com.cpxiao.sudoku.utility.LogUtil;
 
 public class SudokuView extends View {
+    private String tag = "SudokuView";
     private Context myContext;
     private Intent myIntent;
     private String tmpString;
@@ -165,11 +171,11 @@ public class SudokuView extends View {
             game.calculateAllUsedTiles();
             int result = game.ifsuccess();
             if (result == 1) {
-                System.out.println("success!");
+                LogUtil.d(tag, "success!");
                 successFlag = successFlag + result;
             }
             if (successFlag == 1){
-                Toast.makeText(myContext, "恭喜，您赢了！",Toast.LENGTH_SHORT).show();
+                Toast.makeText(myContext, "恭喜，您赢了！",Toast.LENGTH_LONG).show();
             }
         }
         //点击待选数字以及del区域

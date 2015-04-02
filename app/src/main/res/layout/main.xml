@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/game_type"
-        android:textSize="30sp"
         android:gravity="center"
     />
     <RadioGroup
@@ -21,28 +20,24 @@
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="9*9"
-            android:textSize="30sp"
+            android:text="@string/game_type1"
             android:checked="true"/>
         <RadioButton
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16*16"
-            android:textSize="30sp"/>
+            android:text="@string/game_type2"/>
         <RadioButton
             android:id="@+id/radioButton3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="25*25"
-            android:textSize="30sp"/>
+            android:text="@string/game_type3"/>
     </RadioGroup>
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/game_difficulty"
-        android:textSize="30sp"
         android:gravity="center"
         />
     <RadioGroup
@@ -55,34 +50,30 @@
             android:id="@+id/radioButton4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="初级"
-            android:textSize="30sp"
+            android:text="@string/game_difficulty1"
             android:checked="true"/>
         <RadioButton
             android:id="@+id/radioButton5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="中级"
-            android:textSize="30sp"/>
+            android:text="@string/game_difficulty2"/>
         <RadioButton
             android:id="@+id/radioButton6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="高级"
-            android:textSize="30sp"/>
+            android:text="@string/game_difficulty3"/>
         <RadioButton
             android:id="@+id/radioButton7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="专家级"
-            android:textSize="30sp"/>
+            android:text="@string/game_difficulty4"/>
     </RadioGroup>
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="开始游戏"
+        android:text="@string/game_start"
         />
 
 </LinearLayout>

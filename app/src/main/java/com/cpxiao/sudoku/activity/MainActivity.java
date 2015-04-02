@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import com.cpxiao.sudoku.ActivityCollector;
+
+import com.cpxiao.sudoku.utility.ActivityCollector;
 import com.cpxiao.sudoku.R;
+
 import static java.lang.Math.sqrt;
 
 
